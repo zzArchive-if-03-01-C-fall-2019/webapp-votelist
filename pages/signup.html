@@ -22,7 +22,9 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a href="signup.html" type="button" class="btn btn-outline-light" >Sign Up</a>
+            <a class="nav-link" href="login.html">Log In
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
 
 
@@ -30,13 +32,19 @@
       </div>
     </div>
   </nav>
+
   <div class="card mx-auto" style="max-width:300px; margin-top:50px;">
     <article class="card-body">
       <header class="mb-4">
-        <h4 class="card-title">Log In</h4>
+        <h4 class="card-title">Sign up</h4>
       </header>
       <form>
-
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Name</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
         <div class="form-group">
           <label>Email</label>
           <input type="email" class="form-control" placeholder="">
@@ -44,16 +52,16 @@
 
           <div class="form-row">
             <div class="col form-group">
-              <label>Password</label>
+              <label>Create password</label>
               <input class="form-control" type="password">
             </div>
           </div>
           <div class="form-group">
-
-              <a href="#">password forgotten?</a>
-
+            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked="">
+              <div class="custom-control-label"> I am agree with <a href="#">terms and contitions</a> </div>
+            </label>
           </div>
-            <button type="submit" class="btn btn-primary btn-block"> Login </button>
+            <button type="submit" class="btn btn-primary btn-block"> Register </button>
           </div>
 
       </form>
