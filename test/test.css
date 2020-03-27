@@ -1,0 +1,30 @@
+.ZdNmp:not(:focus) {
+    box-shadow: 0 1px rgba(31,127,255,0.3);
+}
+.ZdNmp {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: #1F7FFF;
+    padding: 0 0 8px 0;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    transition: box-shadow 0.2s ease;
+    background: none;
+    font-size: 30px;
+    line-height: unset;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    cursor: text;
+}
