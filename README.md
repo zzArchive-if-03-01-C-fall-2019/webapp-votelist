@@ -1,28 +1,28 @@
 # Upvotepoll
 
-## IDEE
+## IDEA
 
-Eine Website wo man eine Liste erstellt:
+A website where you can make a list:
 
 ```
 TITEL
 ⇧  16 – Webtechnik
 ⇧  10 – Programmieren
 ⇧  9 - Turnen
-+ neues element erstellen
++ create new element
 ```
 
-Diese Liste kann man per Link Teilen.
-Die den link besitzen haben können dann Upvoten
+This list can be shared via link.
+Those who have the link can then vote
 
-## Schritte zum Ziel
+## Steps to the goal
 
-+ Website in Adobe XD gestallten
-+ Grundausehen in HTML mit Boostrap
-+ CSS Allgemein anpassen
-+ CSS auf der Home Seite verändern
-+ mehrfaches erstellen von „elementen“
-+ Backend für link sharing
-+ Log In System gestallten
-+ Dashboard gestallten
++ Website designed in Adobe XD
++ Basic look in HTML with Boostrap
++ CSS general customization
++ Change CSS on the home page
++ multiple creation of "elements
++ Backend for link sharing
++ Log In System designed
++ Dashboard design
 + Log In System Backend
