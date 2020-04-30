@@ -13,9 +13,10 @@
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="../index.html">Votepoll </a>
+      <a class="navbar-brand" href="../index.html">Upvote </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,50 +27,57 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          <li class="nav-item active">
+            <a href="signup.html" type="button" class="btn btn-outline-light">Sign Up</a>
+          </li>
+
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="card mx-auto" style="max-width:300px; margin-top:50px;">
-    <article class="card-body">
-      <header class="mb-4">
-        <h4 class="card-title">Sign up</h4>
-      </header>
-      <form>
-        <div class="form-row">
-          <div class="col form-group">
-            <label>Name</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-control" placeholder="">
-        </div>
 
-          <div class="form-row">
-            <div class="col form-group">
-              <label>Create password</label>
-              <input class="form-control" type="password">
-            </div>
+
+  <div class="container h-70 d-flex justify-content-center" style="max-width:800px; margin-top:50px;">
+    <div class="card w-75">
+      <div class="card-body">
+        <header class="mb-4">
+          <h4 class="card-title">Create a Votepoll</h4>
+        </header>
+        <form>
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Titel</label>            <label for="formGroupExampleInput">Titel</label>
+
+            <input type="text" class="form-control " id="formGroupExampleInput">
           </div>
           <div class="form-group">
-            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked="">
-              <div class="custom-control-label"> I am agree with <a href="#">terms and conditions</a> </div>
+            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input">
+              <div class="custom-control-label"> Private (only accessible via direct link)</div>
             </label>
-          <div>
-            <a href="create.html" type="submit" class="btn btn-primary btn-block"> Register </a>
           </div>
-        </div>
+          <div class="form-group">
+            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input">
+              <div class="custom-control-label"> Multiple vote possible</div>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input">
+              <div class="custom-control-label"> Only vote with a account</div>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input">
+              <div class="custom-control-label"> Allow the same IP several times (e.g. office, school, university)</div>
+            </label>
+          </div>
 
-      </form>
-    </article>
-        <!-- card-body.// -->
+          <a href="votes.html" href="votes.html" type="button" class="btn btn-primary">Create</a>
 
-
-
-
+        </form>
+      </div>
+    </div>
+  </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
