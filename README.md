@@ -27,4 +27,6 @@ Those who have the link can then vote
 + Dashboard design
 + Log In System Backend
 
-# Mindmap
+## Mindmap
+
+webapp-to-do-list-comparison/mindmap/Votelist Mindmap.png
