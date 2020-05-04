@@ -26,3 +26,5 @@ Those who have the link can then vote
 + Log In System designed
 + Dashboard design
 + Log In System Backend
+
+# Mindmap
