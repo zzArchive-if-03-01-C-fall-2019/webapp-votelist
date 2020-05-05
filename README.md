@@ -1,17 +1,18 @@
-# Votlist
+#Votelist
 
-## IDEA
+## Idea
 
-A website where you can make a list:
+A website where you can make a votelist where you can vote:
+
 
 ------------------------------------
 
  Titel: 
-#### Best Subjects
+### Best Subjects
 Discription:
 On this list you can vote for your favourite subject
 
-createdby: MaxMustermann
+###createdby: MaxMustermann
 creationdate: 5.5.2020
 Editors: JuliaMusterfrau, byjj
 
@@ -28,7 +29,8 @@ Editors: JuliaMusterfrau, byjj
 + create new voteelement
 ```
 
-🔗share link: votelist.com/
+
+🔗share link: votelist.com/best-subjects
 
 ------------------------------------
 
