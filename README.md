@@ -4,8 +4,17 @@
 
 A website where you can make a list:
 
+------------------------------------
 
-TITEL
+ Titel: 
+### Best Subjects
+Discription:
+On this list you can vote for your favourite subject
+
+createdby: MaxMustermann
+creationdate: 5.5.2020
+Editors: JuliaMusterfrau, byjj
+
 ```
 ⇧  16   Webtechnik
 ```
@@ -16,9 +25,12 @@ TITEL
 ⇧  9    Turnen
 ```
 ```
-+ create new element
++ create new voteelement
 ```
 
+🔗share link: votelist.com/
+
+------------------------------------
 
 
 This list can be shared via link.
