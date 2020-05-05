@@ -29,4 +29,4 @@ Those who have the link can then vote
 
 ## Mindmap
 Current mind map: https://mm.tt/1493045081?t=Y2Nvz26KGz
-![Image of the Mindmap](https://github.com/if-03-01-C-fall-2019/webapp-to-do-list-comparison/blob/master/mindmap/Votelist%20Mindmap.png)
+
