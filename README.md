@@ -1,16 +1,25 @@
-# Upvotepoll
+# Votlist
 
 ## IDEA
 
 A website where you can make a list:
 
-```
+
 TITEL
-⇧  16 – Webtechnik
-⇧  10 – Programmieren
-⇧  9 - Turnen
+```
+⇧  16   Webtechnik
+```
+```
+⇧  10   Programmieren
+```
+```
+⇧  9    Turnen
+```
+```
 + create new element
 ```
+
+
 
 This list can be shared via link.
 Those who have the link can then vote
