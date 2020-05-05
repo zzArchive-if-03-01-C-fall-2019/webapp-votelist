@@ -12,9 +12,13 @@ A website where you can make a votelist where you can vote:
 Discription:
 On this list you can vote for your favourite subject
 
-###createdby: MaxMustermann
-creationdate: 5.5.2020
+created by: MaxMustermann
+
+creation date: 5.5.2020
+
 Editors: JuliaMusterfrau, byjj
+
+
 
 ```
 ⇧  16   Webtechnik
@@ -50,6 +54,6 @@ Those who have the link can then vote
 + Dashboard design
 + Log In System Backend
 
-## Mindmap
+## Basic structure of the backend
 Current mind map: https://mm.tt/1493045081?t=Y2Nvz26KGz
 
