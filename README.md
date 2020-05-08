@@ -1,5 +1,5 @@
 # Votelist
-by Martin Hausleitner and Jakob Lehner
+A Webapp Projekt by Martin Hausleitner and Jakob Lehner
 
 ## Idea
 
