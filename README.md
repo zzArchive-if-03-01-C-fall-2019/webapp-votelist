@@ -1,4 +1,5 @@
 # Votelist
+by Martin Hausleitner and Jakob Lehner
 
 ## Idea
 
