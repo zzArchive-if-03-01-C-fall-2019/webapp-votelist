@@ -45,15 +45,7 @@ Those who have the link can then vote
 
 ## Steps to the goal
 
-+ Website designed in Adobe XD
-+ Basic look in HTML with Boostrap
-+ CSS general customization
-+ Change CSS on the home page
-+ multiple creation of "elements
-+ Backend for link sharing
-+ Log In System designed
-+ Dashboard design
-+ Log In System Backend
++ In the issues Section
 
 ## Basic structure of the backend
 Current mind map: https://mm.tt/1493045081?t=Y2Nvz26KGz
