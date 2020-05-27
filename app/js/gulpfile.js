@@ -4,12 +4,12 @@ var reload = browserSync.reload;
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var autoPrefixer = require('gulp-autoprefixer');
-//if node version is lower than v.0.1.2
 require('es6-promise').polyfill();
 var cssComb = require('gulp-csscomb');
 var cmq = require('gulp-merge-media-queries');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+var minifyHtml = require('gulp-minify-html');
 gulp.task('css',function(){
     gulp.src(['css/src/**/*.css'])
         .pipe(plumber({
@@ -53,6 +53,7 @@ gulp.task('html',function(){
                 this.emit('end');
             }
         }))
+        .pipe(minifyHtml())
         .pipe(gulp.dest('./'))
         .pipe(reload())
 });
