@@ -3,13 +3,13 @@ const mongoose = require('mongoose')
 const votepollRouter = require('./routes/votepolls')
 const app = express()
 
-app.set('view engine', 'ejs')
-
-app.use('/votepolls', votepollRouter)
-
-mongoose.connect('mongodb://localhost/votelist', {
+mongoose.connect('mongodb://localhost/votepoll', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
+
+app.set('view engine', 'ejs')
+
+app.use(express.urlencoded({ extended: false}))
 
 app.get('/', (req, res) => { 
     const votepolls = [{
@@ -24,5 +24,5 @@ app.get('/', (req, res) => {
     }]
     res.render('votepolls/index', {votepolls: votepolls})
 })
-
+app.use('/votepolls', votepollRouter)
 app.listen(3000)
