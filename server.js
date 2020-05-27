@@ -7,6 +7,10 @@ app.set('view engine', 'ejs')
 
 app.use('/votepolls', votepollRouter)
 
+mongoose.connect('mongodb://localhost/votelist', {
+  useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+})
+
 app.get('/', (req, res) => { 
     const votepolls = [{
         titel: 'Test Votepoll',
