@@ -9,20 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4"> Test Votepoll</h1>
-        <a href="/votepolls/new" class = "btn btn-success">New Votepoll</a>
+        <h1 class="mb-4"> New Votelist</h1>
+        <a href="/new" class = "btn btn-success">New Votepoll</a>
 
-        <% votepolls.forEach(votepoll => { %>
-            <div class="card mt-4">
-              <div class="card-body">
-                <h4 class="card-title"><%= votepoll.title %></h4>
-                <div class="card-text mb-2"><%= votepoll.description %></div>
-                <div class="card-subtitle text-muted mb-2">
-                    <%= votepoll.createdAt.toLocaleDateString()%>
-                </div>
-              </div>
-            </div>
-          <% }) %>
+       
           
     </div>
 </body>

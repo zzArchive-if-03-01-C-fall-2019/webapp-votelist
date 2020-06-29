@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const votesSchema = new mongoose.Schema({
-  title: {
+  votetitle: {
     type: String,
     required: true
   },
@@ -10,7 +10,6 @@ const votesSchema = new mongoose.Schema({
     type: Number
   }
 });
-
 
 const votepollSchema = new mongoose.Schema({
   title: {

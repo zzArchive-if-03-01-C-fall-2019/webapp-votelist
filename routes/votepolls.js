@@ -18,9 +18,9 @@ router.post('/', async (req, res) => {
     })
     try{
         votepoll = await votepoll.save()
-        res.redirect(`/votepolls/${votepoll.id}`)
+        res.redirect(`/${votepoll.id}`)
     } catch (e) {
-        res.render('votepoll/new', {votepoll: votepoll})
+        res.render('/new', {votepoll: votepoll})
     }
 })
 module.exports = router

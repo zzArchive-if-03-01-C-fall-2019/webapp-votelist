@@ -12,17 +12,8 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false}))
 
 app.get('/', (req, res) => { 
-    const votepolls = [{
-        titel: 'Test Votepoll',
-        createdAt: new Date(),
-        description: 'test'
-    },
-    {
-        titel: 'Test Votepoll2',
-        createdAt: new Date(),
-        description: 'test2'
-    }]
-    res.render('votepolls/index', {votepolls: votepolls})
+    res.render('votepolls/index')
 })
-app.use('/votepolls', votepollRouter)
+
+app.use('/', votepollRouter)
 app.listen(3000)
