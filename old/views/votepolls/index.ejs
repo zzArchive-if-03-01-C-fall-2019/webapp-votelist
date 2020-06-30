@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Votepoll</title>
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Votelist</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="pages\login.html">About us
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="card mx-auto" style="max-width:300px; margin-top:50px;">
+    <div class="card-body">
+      <h1 class="text align-self-center p-2 text-center">Create a new Votepool</h1>
+      <div class="d-flex justify-content-center">
+        <a href="/new">
+          <svg class="bi bi-plus" width="10em" height="10em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 60px; max-width: 575.98px;">
+    <h1 class="mb-4">New Votepoll</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum ipsam nihil assumenda libero, repudiandae
+      soluta, obcaecati minima alias commodi, ut eos magnam. Commodi, tenetur. Sit ipsum provident ad itaque deleniti.
+    </p>
+    <%- include('_share') %>
+    <br><br>
+
+    <div class="col-md-12">
+      <div class="form-group">
+          <label for="">Write comment</label>   
+          <textarea id="textarea" class="form-control" rows="3"></textarea>             
+      </div>
+  </div>
+  <div class="col-md-12">
+      
+      <button id= "submitBtn" class="btn btn-primary float-right">Post Comment</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <div id="typing" class="typing text-success"></div>
+      <ul class="comment__box" >
+          <!-- <li class="comment" >
+              <div class="card border-light mb-3">
+                  <div class="card-body" >
+                      <h6>Arjun</h6>
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, dolores deserunt quos sapiente reiciendis odio sequi nemo provident nam, molestias cupiditate harum quia, odit nobis! Expedita fugiat soluta animi quas.</p>
+                      <div>
+                          <img height="17" src="/img/clock.webp" alt="clock">
+                          <small>6:52 PM</small>
+                      </div>
+                  </div>
+              </div>
+          </li>
+          <li class="comment" >
+              
+          </li>
+          <li class="comment" >
+              <div class="card border-light mb-3">
+                  <div class="card-body" >
+                      <h6>Arjun</h6>
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, dolores deserunt quos sapiente reiciendis odio sequi nemo provident nam, molestias cupiditate harum quia, odit nobis! Expedita fugiat soluta animi quas.</p>
+                      <div>
+                          <img height="17" src="/img/clock.webp" alt="clock">
+                          <small>6:52 PM</small>
+                      </div>
+                  </div>
+              </div> 
+          </li>-->
+      </ul>
+  </div>
+</div>
+</div>
+<script src="socket.io/socket.io.js"></script>
+<script src="/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+    <%- include('_create_element') %>
+    <%- include('_vote_element') %>
+    <%- include('_vote_element') %>
+    <%- include('_vote_element') %>
+
+  </div>
+
+
+
+</body>
+
+</html>

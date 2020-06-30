@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Beddit - Settings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+</head>
+
+<%- include('partials/nav', {user: locals.user, karma}) %>
+
+<body>
+    <div class="container" style="padding-top: 60px; max-width: 575.98px;">
+
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="">Votelists</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/u/profile_user/posts">Vote elements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/u/profile_user/saved/posts">Saved vote elements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/settings">Settings</a>
+            </li>
+
+        </ul>
+        <br>
+        <div id="wrapper">
+            <div class="card text-center">
+                <h5 class="card-header">Settings</h5>
+                <div class="card-body">
+                    <button class="btn btn-success btn-block" id="change-password" type="submit">Change password</button><br>
+                    <button class="btn btn-danger btn-block" id="delete-account" type="submit">Delete account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="/js/settings.js"></script>
+</body>
+
+
+
+</html>
