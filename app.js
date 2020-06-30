@@ -8,8 +8,8 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // making the connection to mongo database
-//mongoose.connect(db.config.uri, db.config.options);
-mongoose.connect('mongodb://localhost/votepoll', {
+
+mongoose.connect(db.config.uri, {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
