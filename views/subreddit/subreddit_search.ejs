@@ -12,7 +12,6 @@
             <p><%=  info.description %></p>
             <br>
             <%- include('../partials/sidebar_subreddit_actions', {name: info.name, state: state}) %>
-            <%- include('../partials/sort') %>
             <% if (posts != undefined) { %>
                 <h4>Results (<%= posts.length %>) </h4> 
                 <% } %>

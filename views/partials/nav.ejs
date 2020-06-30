@@ -5,8 +5,10 @@
     </a>
     <div id="user-info">
         <% if(user) { %>
+          <a class="btn btn-outline-light" href="/submit/subreddit" id="user-settings">Create a votelist</a>
 <!-- Example single danger button -->
 <div class="btn-group">
+        
         <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="user"><%= user %></span></button>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="">Votelist</a>
@@ -18,6 +20,7 @@
         </div>
       </div>
         <% } else { %>
+        <a class="btn btn-outline-light" href="/submit/subreddit" id="user-settings">Create a votelist</a>
         <a class="btn btn-outline-light" href="/login" id="user-settings">Log In</a>
         <% } %>
     </div>

@@ -16,7 +16,7 @@
             
             <div >
                 <% if(!locals.user) { %>
-                    You must be logged in to submit a post / link / subbeddit.
+                    You must be logged in to submit a votelist.
                 <% } else { %>
                 <form id="form-subreddit" action="/submit/subreddit" method="post">
                     <input type="text" class="form-control" name="subreddit" id="subreddit_form" placeholder="Enter subbeddit" required>
