@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 let Post = require("../models/post");
-let Comment = require("../models/comment");
 let Profile = require("../models/profile");
 let Account = require("../models/account")
 
