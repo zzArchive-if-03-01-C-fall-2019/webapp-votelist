@@ -117,14 +117,11 @@ exports.vote = function (req, res) {
             username: req.body.user
         }, {
             $inc: {
-                karma_post: 1
+
             }
         }, function (err, result) {
             if (err) throw err;
 
-            if (result) {
-                console.log(`[${req.session.user}] post karma increased!`)
-            }
         });
     } else if (req.body.action == "decrement") {
         console.log("decrement")
@@ -133,14 +130,14 @@ exports.vote = function (req, res) {
             username: req.body.user
         }, {
             $inc: {
-                karma_post: -1
+                //karma_post: -1
             }
         }, function (err, result) {
             if (err) throw err;
 
-            if (result) {
-                console.log(`[${req.session.user}] post karma decreased!`)
-            }
+            //if (result) {
+            //    console.log(`[${req.session.user}] post karma decreased!`)
+            //}
         });
     }
 

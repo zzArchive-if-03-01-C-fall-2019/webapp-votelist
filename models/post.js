@@ -15,10 +15,6 @@ const postSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    num_of_comments: {
-        type: Number,
-        default: 0
-    }
 });
 
 module.exports = mongoose.model('Post', postSchema);

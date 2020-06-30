@@ -40,9 +40,9 @@ exports.posts = function (req, res) {
     }, function (err, result) {
         if (err) throw err;
 
-        if (result.length) {
-            karma = result[0]['karma_post'] + result[0]['karma_comment']
-        }
+        //if (result.length) {
+        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
+        //}
     })
 
     Account.find({

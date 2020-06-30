@@ -58,5 +58,5 @@ passport.deserializeUser(function (user_id, done) {
 });
 
 app.listen(process.env.PORT || 5002, function () {
-    console.log("listening on port 5000!");
+    console.log("listening on port 5002!");
 });
