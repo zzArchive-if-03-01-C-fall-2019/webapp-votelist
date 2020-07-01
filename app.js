@@ -9,8 +9,9 @@ app.set('view engine', 'ejs');
 
 // making the connection to mongo database
 
+
 //mongoose.connect(db.config.uri, {
-    mongoose.connect('mongodb://localhost:27017/votelist', {
+   mongoose.connect('mongodb://localhost:27017/votelist', {
         useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 

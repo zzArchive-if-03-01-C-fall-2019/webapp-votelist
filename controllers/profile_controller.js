@@ -89,6 +89,77 @@ exports.posts = function (req, res) {
     })
 }
 
+
+
+exports.saved_posts = function (req, res) {
+    let created = undefined
+    let subscribed = undefined
+    //let karma = 0
+
+    let sort = undefined;
+
+    switch (req.query.sort) {
+        case "top":
+            sort = {
+                votes: -1
+            }
+            break;
+        case "new":
+            sort = {
+                time: -1
+            }
+            break;
+        case "old":
+            sort = {
+                time: 1
+            }
+            break;
+        default:
+            sort = {
+                votes: -1
+            }
+    }
+
+    Profile.find({
+        username: req.params.user
+    }, function (err, result) {
+        if (err) throw err;
+
+        //if (result.length) {
+        //    subscribed = result[0]['subscribed']
+        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
+        //}
+    })
+
+    Account.find({
+        username: req.params.user
+    }).exec().then((result) => {
+        created = new Date(result[0]['created']).toLocaleDateString().replace(/\//g, '-')
+
+        return Profile.find({
+            username: req.params.user
+        })
+    }).then((result) => {
+        console.log(result)
+        return Post.find({
+            _id: {
+                $in: result[0].saved_posts
+            }
+        }).sort(sort)
+    }).then((result) => {
+        res.render("./profile/profile_saved_posts", {
+            profile_user: req.params.user,
+            posts: result,
+            //karma: karma,
+            created: created,
+            //subscribed: subscribed,
+            isAuth: req.isAuthenticated()
+        })
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
 //exports.comments = function (req, res) {
 //    //let subscribed = undefined;
 //    let comments = undefined;
@@ -183,75 +254,6 @@ exports.posts = function (req, res) {
 //        });
 //    });
 //}
-
-exports.saved_posts = function (req, res) {
-    let created = undefined
-    let subscribed = undefined
-    //let karma = 0
-
-    let sort = undefined;
-
-    switch (req.query.sort) {
-        case "top":
-            sort = {
-                votes: -1
-            }
-            break;
-        case "new":
-            sort = {
-                time: -1
-            }
-            break;
-        case "old":
-            sort = {
-                time: 1
-            }
-            break;
-        default:
-            sort = {
-                votes: -1
-            }
-    }
-
-    Profile.find({
-        username: req.params.user
-    }, function (err, result) {
-        if (err) throw err;
-
-        //if (result.length) {
-        //    subscribed = result[0]['subscribed']
-        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-        //}
-    })
-
-    Account.find({
-        username: req.params.user
-    }).exec().then((result) => {
-        created = new Date(result[0]['created']).toLocaleDateString().replace(/\//g, '-')
-
-        return Profile.find({
-            username: req.params.user
-        })
-    }).then((result) => {
-        console.log(result)
-        return Post.find({
-            _id: {
-                $in: result[0].saved_posts
-            }
-        }).sort(sort)
-    }).then((result) => {
-        res.render("./profile/profile_saved_posts", {
-            profile_user: req.params.user,
-            posts: result,
-            //karma: karma,
-            created: created,
-            //subscribed: subscribed,
-            isAuth: req.isAuthenticated()
-        })
-    }).catch((err) => {
-        console.log(err)
-    })
-}
 
 //exports.saved_comments = function (req, res) {
 //    let created = undefined
