@@ -5,6 +5,7 @@ const router = express.Router();
 let profile_controller = require("../controllers/profile_controller")
 
 // ROUTES
+router.get('/:user/votelists', profile_controller.votelists);
 router.get('/:user/posts', profile_controller.posts);
 router.get('/:user/saved/posts', profile_controller.saved_posts);
 
