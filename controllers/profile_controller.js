@@ -1,10 +1,83 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
+let Votelists = require("../models/subreddit");
 let Post = require("../models/post");
 let Profile = require("../models/profile");
 let Account = require("../models/account")
 
+exports.votelists = function (req, res){
+    let posts = undefined;
+    let created = undefined;
+
+    let sort = undefined;
+
+    switch (req.query.sort) {
+        case "top":
+            sort = {
+                votes: -1
+            }
+            break;
+        case "new":
+            sort = {
+                time: -1
+            }
+            break;
+        case "old":
+            sort = {
+                time: 1
+            }
+            break;
+        default:
+            sort = {
+                votes: -1
+            }
+    }
+
+    Profile.find({
+        username: req.params.user
+    }, function (err, result) {
+        if (err) throw err;
+
+    })
+    Account.find({
+        username: req.params.user
+    }, function (err, result) {
+        if (err) throw err;
+
+        if (result.length) {
+            var d = new Date(result[0]['created'])
+            created = d.toLocaleDateString().replace(/\//g, '-')
+        } else {
+            res.render("./error")
+        }
+    }).then(function () {
+        Profile.find({
+            username: req.params.user
+        }, function (err, result) {
+            if (err) throw err;
+
+        }).then(function () {
+            Post.find({
+                username: req.params.user
+            })
+            .sort(sort).exec(function (err, result) {
+                if (err) throw err;
+
+                if (result.length) {
+                    posts = result
+                }
+                console.log(`[Profile] fetching votelists from ${req.params.user} !`)
+                res.render("./profile/profile_votelists", {
+                    profile_user: req.params.user,
+                    posts: posts,
+                    created: created,
+                    isAuth: req.isAuthenticated()
+                })
+            })
+    })
+    })
+}
 exports.posts = function (req, res) {
     //let subscribed = undefined;
     let posts = undefined;
