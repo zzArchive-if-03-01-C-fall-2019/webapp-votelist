@@ -4,6 +4,7 @@ const validator = require("validator");
 const router = express.Router();
 
 let Post = require("../models/post");
+let Comment = require("../models/comment");
 let Profile = require("../models/profile");
 let Account = require("../models/account");
 
@@ -45,7 +46,22 @@ router.get('/frontpage', function (req, res) {
     })
 })
 
+router.get('/comment/:id', function (req, res) {
+    Comment.find({
+        _id: req.params.id
+    }, function (err, doc) {
+        if (err) throw err;
 
+        if (doc.length) {
+            res.json(doc[0])
+        } else {
+            res.status(404);
+            res.json({
+                error: `Unable to find comment.`
+            })
+        }
+    })
+})
 
 router.get('/post/:id', function (req, res) {
     Post.find({
@@ -64,6 +80,22 @@ router.get('/post/:id', function (req, res) {
     })
 })
 
+router.get('/post/:id/comments', function (req, res) {
+    Comment.find({
+        ref: req.params.id
+    }, function (err, doc) {
+        if (err) throw err;
+
+        if (doc.length) {
+            res.json(doc)
+        } else {
+            res.status(404);
+            res.json({
+                error: `Unable to find any comments.`
+            })
+        }
+    })
+})
 
 router.get('/u/:profile', function (req, res) {
     Profile.find({
@@ -99,6 +131,22 @@ router.get('/u/:profile/posts', function (req, res) {
     })
 });
 
+router.get('/u/:profile/comments', function (req, res) {
+    Comment.find({
+        username: req.params.profile
+    }, function (err, doc) {
+        if (err) throw err;
+
+        if (doc.length) {
+            res.json(doc)
+        } else {
+            res.status(404);
+            res.json({
+                error: `Unable to find post.`
+            })
+        }
+    })
+});
 
 router.post('/register', function (req, res) {
     if (req.body.username && req.body.password) {

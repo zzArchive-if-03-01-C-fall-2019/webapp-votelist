@@ -4,16 +4,16 @@ let Profile = require("../models/profile");
 
 exports.subreddit_post_view = function (req, res) {
     let subscribed = false
-    //let karma = 0
+    let karma = 0
 
     Profile.find({
         username: req.session.user
     }, function (err, result) {
         if (err) throw err;
 
-        //if (result.length) {
-        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-        //}
+        if (result.length) {
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
+        }
     });
 
     Profile.find({
@@ -37,7 +37,7 @@ exports.subreddit_post_view = function (req, res) {
             if (doc.length) {
                 res.render('./subreddit/subreddit_post', {
                     info: doc[0],
-                    //karma: karma,
+                    karma: karma,
                     state: subscribed,
                     isAuth: req.isAuthenticated(),
                 })
@@ -68,9 +68,9 @@ exports.subreddit_link_view = function (req, res) {
     }, function (err, result) {
         if (err) throw err;
 
-        //if (result.length) {
-        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-        //}
+        if (result.length) {
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
+        }
     });
 
 
@@ -95,7 +95,7 @@ exports.subreddit_link_view = function (req, res) {
             if (doc.length) {
                 res.render('./subreddit/subreddit_link', {
                     info: doc[0],
-                    //karma: karma,
+                    karma: karma,
                     state: subscribed,
                     isAuth: req.isAuthenticated(),
                 })
@@ -133,16 +133,16 @@ exports.subreddit_search = function (req, res) {
     let subreddit = undefined
     let posts = undefined
     
-    //let karma = 0
+    let karma = 0
 
     Profile.find({
         username: req.session.user
     }, function (err, result) {
         if (err) throw err;
 
-        //if (result.length) {
-        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-        //}
+        if (result.length) {
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
+        }
     });
 
     Subreddit.find({
@@ -190,7 +190,7 @@ exports.subreddit_search = function (req, res) {
                 res.render("./subreddit/subreddit_search", {
                     info: subreddit,
                     posts: result,
-                    //karma: karma,
+                    karma: karma,
                     state: subscribed,
                     query: req.body.query,
                     isAuth: req.isAuthenticated(),
@@ -280,10 +280,10 @@ exports.front_search = function (req, res) {
             username: req.session.user
         }, function (err, result) {
             if (err) throw err;
-            //if (result.length) {
-            //    subscribed = result[0]['subscribed'];
-            //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-            //}
+            if (result.length) {
+                subscribed = result[0]['subscribed'];
+                karma = result[0]['karma_post'] + result[0]['karma_comment']
+            }
         })
         .then(function () {
             Subreddit.find({}, function (err, doc) {
@@ -314,7 +314,7 @@ exports.front_search = function (req, res) {
                                 posts: result,
                                 subreddits: subreddits,
                                 subscribed: subscribed,
-                                //karma: karma,
+                                karma: karma,
                                 query: req.body.query,
                                 isAuth: req.isAuthenticated()
                             })
@@ -325,30 +325,30 @@ exports.front_search = function (req, res) {
 
 exports.front_post_view = function (req, res) {
     let subscribed = undefined;
-    //let karma = 0;
+    let karma = 0;
 
     Profile.find({
         username: req.session.user
     }, function (err, result) {
         if (err) throw err;
 
-        //if (result.length) {
-        //    subscribed = result[0]['subscribed']
-        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-//
-        //}
+        if (result.length) {
+            subscribed = result[0]['subscribed']
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
+
+        }
 
         res.render("./front/front_post", {
             isAuth: req.isAuthenticated(),
             subscribed: subscribed,
-            //karma: karma
+            karma: karma
         });
     })
 }
 
 exports.front_post_view = function (req, res) {
     let subscribed = undefined;
-    //let karma = 0;
+    let karma = 0;
 
     Profile.find({
         username: req.session.user
@@ -357,20 +357,20 @@ exports.front_post_view = function (req, res) {
 
         if (result.length) {
             subscribed = result[0]['subscribed']
-            //karma = result[0]['karma_post'] + result[0]['karma_comment']
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
 
         }
 
         res.render("./front/front_post", {
             isAuth: req.isAuthenticated(),
             subscribed: subscribed,
-            //karma: karma
+            karma: karma
         });
     })
 }
 exports.front_link_view = function (req, res) {
     let subscribed = undefined;
-    //let karma = 0;
+    let karma = 0;
 
     Profile.find({
         username: req.session.user
@@ -379,19 +379,19 @@ exports.front_link_view = function (req, res) {
 
         if (result.length) {
             subscribed = result[0]['subscribed']
-            //karma = result[0]['karma_post'] + result[0]['karma_comment']
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
         }
 
         res.render("./front/front_link", {
             isAuth: req.isAuthenticated(),
-            //karma: karma,
+            karma: karma,
             subscribed: subscribed
         });
     })
 }
 exports.subreddit_view = function (req, res) {
     let subscribed = undefined;
-    //let karma = 0;
+    let karma = 0;
 
     Profile.find({
         username: req.session.user
@@ -400,12 +400,12 @@ exports.subreddit_view = function (req, res) {
 
         if (result.length) {
             subscribed = result[0]['subscribed']
-            //karma = result[0]['karma_post'] + result[0]['karma_comment']
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
         }
 
         res.render("./front/front_subreddit", {
             isAuth: req.isAuthenticated(),
-            //karma: karma,
+            karma: karma,
             
         });
     })

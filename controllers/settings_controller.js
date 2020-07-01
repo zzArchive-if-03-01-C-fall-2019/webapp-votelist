@@ -9,12 +9,12 @@ exports.view = function (req, res) {
         }, function (err, result) {
             if (err) throw err;
 
-            //if (result.length) {
-            //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-            //    res.render('./settings', {
-            //        karma: karma
-            //    })
-            //}
+            if (result.length) {
+                karma = result[0]['karma_post'] + result[0]['karma_comment']
+                res.render('./settings', {
+                    karma: karma
+                })
+            }
         })
     } else {
         res.render('./login')

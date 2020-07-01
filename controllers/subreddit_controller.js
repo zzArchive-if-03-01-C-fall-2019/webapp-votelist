@@ -1,13 +1,13 @@
 let Subreddit = require("../models/subreddit");
 let Post = require("../models/post");
-
+let Comment = require("../models/comment");
 let Profile = require("../models/profile");
 
 exports.get_all = function (req, res) {
     let subreddit = undefined;
     let posts = undefined;
     let subscribed = false;
-    //let karma = 0
+    let karma = 0
 
     let sort = undefined;
 
@@ -39,7 +39,7 @@ exports.get_all = function (req, res) {
         if (err) throw err;
 
         if (result.length) {
-            //karma = result[0]['karma_post'] + result[0]['karma_comment']
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
         }
     });
 
@@ -79,7 +79,7 @@ exports.get_all = function (req, res) {
                 res.render("./subreddit/subreddit", {
                     info: subreddit,
                     posts: posts,
-                    //karma: karma,
+                    karma: karma,
                     state: subscribed,
                     isAuth: req.isAuthenticated()
                 })
@@ -93,7 +93,7 @@ exports.get_post = function (req, res) {
     let post = undefined
     let comments = undefined
     let subscribed = false;
-    //let karma = 0
+    let karma = 0
 
     let sort = undefined;
 
@@ -125,7 +125,7 @@ exports.get_post = function (req, res) {
         if (err) throw err;
 
         if (result.length) {
-            //karma = result[0]['karma_post'] + result[0]['karma_comment']
+            karma = result[0]['karma_post'] + result[0]['karma_comment']
         }
     });
 
@@ -174,7 +174,7 @@ exports.get_post = function (req, res) {
                     res.render('./post', {
                         info: info,
                         post: post,
-                        //karma: karma,
+                        karma: karma,
                         comments: comments,
                         state: subscribed,
                         isAuth: req.isAuthenticated()
