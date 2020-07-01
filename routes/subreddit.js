@@ -3,7 +3,7 @@ const router = express.Router();
 
 // CONTROLLERS
 let subreddit_controller = require("../controllers/subreddit_controller")
-let comment_controller = require("../controllers/comment_controller")
+//let comment_controller = require("../controllers/DELcomment_controller")
 let submit_controller = require("../controllers/submit_controller")
 
 // ROUTES
@@ -13,7 +13,7 @@ router.get('/:subreddit/submit/post', submit_controller.subreddit_post_view);
 router.get('/:subreddit/submit/link', submit_controller.subreddit_link_view);
 
 router.post('/:subreddit/submit/post', submit_controller.subreddit_post);
-router.post('/:subreddit/:id/comments', comment_controller.comment);
+//router.post('/:subreddit/:id/comments', comment_controller.comment);
 router.post('/:subreddit/submit/link', submit_controller.subreddit_link);
 router.post('/:subreddit/search', submit_controller.subreddit_search);
 

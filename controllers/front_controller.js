@@ -6,7 +6,7 @@ let PostState = require("../models/postState")
 exports.get_all = function (req, res) {
     let subreddits = undefined;
     let posts = undefined;
-    let karma = 0;
+    //let karma = 0;
     let sort = undefined;
 
     switch (req.query.sort) {
@@ -36,9 +36,9 @@ exports.get_all = function (req, res) {
     }, function (err, result) {
         if (err) throw err;
 
-        if (result.length) {
-            karma = result[0]['karma_post'] + result[0]['karma_comment']
-        }
+        //if (result.length) {
+        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
+        //}
     }).then(function () {
         Subreddit.find({}, function (err, doc) {
             if (err) throw err;
@@ -66,7 +66,7 @@ exports.get_all = function (req, res) {
                     res.render("./front/front", {
                         posts: posts,
                         subreddits: subreddits,
-                        karma: karma,
+                        //karma: karma,
                         isAuth: req.isAuthenticated()
                     })
                 });

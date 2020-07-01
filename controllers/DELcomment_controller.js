@@ -1,7 +1,7 @@
 let Post = require("../models/post");
-let Comment = require("../models/comment");
+//let Comment = require("../models/DELcomment");
 let Profile = require("../models/profile");
-let CommentState = require("../models/commentState")
+//let CommentState = require("../models/DELcommentState")
 
 
 exports.check = function (req, res) {

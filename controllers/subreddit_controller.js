@@ -1,13 +1,13 @@
 let Subreddit = require("../models/subreddit");
 let Post = require("../models/post");
-let Comment = require("../models/comment");
+//let Comment = require("../models/DELcomment");
 let Profile = require("../models/profile");
 
 exports.get_all = function (req, res) {
     let subreddit = undefined;
     let posts = undefined;
-    let subscribed = false;
-    let karma = 0
+    //let subscribed = false;
+    //let karma = 0
 
     let sort = undefined;
 
@@ -38,9 +38,9 @@ exports.get_all = function (req, res) {
     }, function (err, result) {
         if (err) throw err;
 
-        if (result.length) {
-            karma = result[0]['karma_post'] + result[0]['karma_comment']
-        }
+        //if (result.length) {
+        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
+        //}
     });
 
     Subreddit.find({
@@ -56,16 +56,16 @@ exports.get_all = function (req, res) {
     }).then(function () {
         Profile.find({
             username: req.session.user,
-            subscribed: req.params.subreddit,
+            //subscribed: req.params.subreddit,
         }, function (err, doc) {
             if (err) throw err;
 
-            if (!doc.length) {
-                // res.send("Unable to find subreddit state")
-                return;
-            } else {
-                subscribed = true
-            }
+            //if (!doc.length) {
+            //    // res.send("Unable to find subreddit state")
+            //    return;
+            //} else {
+            //    subscribed = true
+            //}
         }).then(function () {
             Post.find({
                 subreddit: req.params.subreddit
@@ -79,8 +79,8 @@ exports.get_all = function (req, res) {
                 res.render("./subreddit/subreddit", {
                     info: subreddit,
                     posts: posts,
-                    karma: karma,
-                    state: subscribed,
+                    //karma: karma,
+                    //state: ribed,
                     isAuth: req.isAuthenticated()
                 })
             });
@@ -91,9 +91,9 @@ exports.get_all = function (req, res) {
 exports.get_post = function (req, res) {
     let info = undefined
     let post = undefined
-    let comments = undefined
-    let subscribed = false;
-    let karma = 0
+    //let comments = undefined
+    //let ribed = false;
+    //let karma = 0
 
     let sort = undefined;
 
@@ -124,9 +124,9 @@ exports.get_post = function (req, res) {
     }, function (err, result) {
         if (err) throw err;
 
-        if (result.length) {
-            karma = result[0]['karma_post'] + result[0]['karma_comment']
-        }
+        //if (result.length) {
+        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
+        //}
     });
 
     Subreddit.find({
@@ -140,7 +140,7 @@ exports.get_post = function (req, res) {
     }).then(function () {
         Profile.find({
             username: req.session.user,
-            subscribed: req.params.subreddit,
+            //subscribed: req.params.subreddit,
         }, function (err, doc) {
             if (err) throw err;
 
@@ -148,7 +148,7 @@ exports.get_post = function (req, res) {
                 // res.send("Unable to find subreddit state")
                 return;
             } else {
-                subscribed = true
+               //subscribed = true
             }
         }).then(function () {
             Post.find({
@@ -174,9 +174,9 @@ exports.get_post = function (req, res) {
                     res.render('./post', {
                         info: info,
                         post: post,
-                        karma: karma,
-                        comments: comments,
-                        state: subscribed,
+                        //karma: karma,
+                        //comments: comments,
+                        //state: subscribed,
                         isAuth: req.isAuthenticated()
                     })
                 })
@@ -203,11 +203,12 @@ exports.check_subreddit = function (req, res) {
 
 // SUBSCRIBING TO SUBREDDIT
 exports.subscribe = function (req, res) {
+    if (err) throw err;
     Profile.update({
         username: req.session.user
     }, {
         $push: {
-            subscribed: req.params.subreddit
+           // subscribed: req.params.subreddit
         }
     }, function (err, doc) {
         if (err) throw err;
@@ -219,11 +220,12 @@ exports.subscribe = function (req, res) {
 
 // UNSUBSCRIBE FROM SUBREDDIT
 exports.unsubscribe = function (req, res) {
+    if (err) throw err;
     Profile.update({
         username: req.session.user
     }, {
         $pull: {
-            subscribed: req.params.subreddit
+            //subscribed: req.params.subreddit
         }
     }, function (err, doc) {
         if (err) throw err;

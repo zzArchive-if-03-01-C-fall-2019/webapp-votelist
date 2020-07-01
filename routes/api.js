@@ -4,7 +4,7 @@ const validator = require("validator");
 const router = express.Router();
 
 let Post = require("../models/post");
-let Comment = require("../models/comment");
+let Comment = require("../models/DELcomment");
 let Profile = require("../models/profile");
 let Account = require("../models/account");
 
