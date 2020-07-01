@@ -62,7 +62,7 @@ exports.subreddit_post = function (req, res) {
 exports.subreddit_link_view = function (req, res) {
     //let subscribed = false;
     //let karma = 0
-//
+    //
     Profile.find({
         username: req.session.user
     }, function (err, result) {
@@ -84,7 +84,7 @@ exports.subreddit_link_view = function (req, res) {
             // res.send("Unable to find subreddit state")
             return;
         } else {
-           // subscribed = true
+            // subscribed = true
         }
     }).then(function () {
         Subreddit.find({
@@ -132,7 +132,7 @@ exports.subreddit_link = function (req, res) {
 exports.subreddit_search = function (req, res) {
     let subreddit = undefined
     let posts = undefined
-    
+
     //let karma = 0
 
     Profile.find({
@@ -156,7 +156,7 @@ exports.subreddit_search = function (req, res) {
     }).then(function () {
         Profile.find({
             username: req.session.user,
-            
+
         }, function (err, doc) {
             if (err) throw err;
 
@@ -259,6 +259,7 @@ exports.subreddit = function (req, res) {
         }).then(function () {
         Subreddit({
             name: req.body.subreddit,
+            username: req.session.user,
             description: req.body.description
         }).save(function (err, doc) {
             if (err) throw err
@@ -326,7 +327,7 @@ exports.front_search = function (req, res) {
 exports.front_post_view = function (req, res) {
     //let subscribed = undefined;
     //let karma = 0;
-//
+    //
     Profile.find({
         username: req.session.user
     }, function (err, result) {
@@ -335,13 +336,13 @@ exports.front_post_view = function (req, res) {
         //if (result.length) {
         //    subscribed = result[0]['subscribed']
         //    karma = result[0]['karma_post'] + result[0]['karma_comment']
-//
+        //
         //}
 
         res.render("./front/front_post", {
             isAuth: req.isAuthenticated(),
-           //subscribed: subscribed,
-           //karma: karma
+            //subscribed: subscribed,
+            //karma: karma
         });
     })
 }
@@ -355,11 +356,11 @@ exports.front_post_view = function (req, res) {
     }, function (err, result) {
         if (err) throw err;
 
-       //if (result.length) {
-       //    subscribed = result[0]['subscribed']
-       //    karma = result[0]['karma_post'] + result[0]['karma_comment']
+        //if (result.length) {
+        //    subscribed = result[0]['subscribed']
+        //    karma = result[0]['karma_post'] + result[0]['karma_comment']
 
-       //}
+        //}
 
         res.render("./front/front_post", {
             isAuth: req.isAuthenticated(),
@@ -406,7 +407,7 @@ exports.subreddit_view = function (req, res) {
         res.render("./front/front_subreddit", {
             isAuth: req.isAuthenticated(),
             //karma: karma,
-            
+
         });
     })
 }

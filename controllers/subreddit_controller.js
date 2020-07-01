@@ -148,7 +148,7 @@ exports.get_post = function (req, res) {
                 // res.send("Unable to find subreddit state")
                 return;
             } else {
-               //subscribed = true
+                //subscribed = true
             }
         }).then(function () {
             Post.find({
@@ -208,7 +208,7 @@ exports.subscribe = function (req, res) {
         username: req.session.user
     }, {
         $push: {
-           // subscribed: req.params.subreddit
+            // subscribed: req.params.subreddit
         }
     }, function (err, doc) {
         if (err) throw err;

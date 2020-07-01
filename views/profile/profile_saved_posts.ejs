@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
-    <%- include('../partials/head', {title: "/u/" + profile_user + " - saved posts" }) %>
+<%- include('../partials/head', {title: "/u/" + profile_user + " - saved posts" }) %>
 
 <body>
     <%- include('../partials/nav', {user: locals.user}) %>
-    
+
     <span id="auth"><%= isAuth %></span>
 
     <div class="container" style="padding-top: 60px; max-width: 850px;">
@@ -27,11 +27,10 @@
         <br>
 
         <div class="main">
-                <%- include('../partials/sort') %>
+            <%- include('../partials/sort') %>
 
-                <% if (posts != undefined) { 
-                    posts.forEach((post) => { %>
-                        <article class="post" data-ref="<%= post._id %>">
+            <% if (posts != undefined) {  posts.forEach((post) => { %>
+            <article class="post" data-ref="<%= post._id %>">
                 <div class="arrows">
                     <div class="upvote-post auth-req"><svg transform="translate(-1,-9)" width="1em" height="1em"
                             viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor"
@@ -39,7 +38,8 @@
                             <path
                                 d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
                         </svg></i></div>
-                    <span class="post-votes" style="position: relative; left: 3px; top: -5px;"
+                    <span class="po
+                   st-votes" style="position: relative; left: 3px; top: -5px;"
                         data-ref="<%= post._id %>"><%= post.votes %></span>
                     <div class="downvote-post auth-req"><svg style="position: relative; left: 3px; top: -5px;"
                             transform="translate(-4,0)" width="1em" height="1em" viewBox="0 0 16 16"
@@ -52,7 +52,8 @@
                 <div class="info">
                     <header>
                         <a><%= post.title %></a>
-                        <small><span class="post-user"><a>by <%= post.username %></a></span> <span>from <a href="/r/<%= post.subreddit %>"><%= post.subreddit %></a></span></small>
+                        <small><span class="post-user"><a>by <%= post.username %></a></span> <span>from <a
+                                    href="/r/<%= post.subreddit %>"><%= post.subreddit %></a></span></small>
                     </header>
                     <div>
                         <%= post.body %>
@@ -66,26 +67,26 @@
                 </div>
             </article>
             <% });%>
-                <% if(posts.length == 0) { %>
-                    There are no saved posts.
-                <% } %>
+            <% if(posts.length == 0) { %>
+            There are no saved posts.
+            <% } %>
             <% } else { %>
             There are no saved posts.
             <% } %>
-            
-        </div>
-        </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
-        <script src="/js/load.js"></script>
+        </div>
+    </div>
 
-        <script src="/js/index.js"></script>
-        <script src="/js/post.js"></script>
-        <script src="/js/sort.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
+    <script src="/js/load.js"></script>
+
+    <script src="/js/index.js"></script>
+    <script src="/js/post.js"></script>
+    <script src="/js/sort.js"></script>
 
 </body>
 

@@ -5,14 +5,15 @@
     <title>Beddit - Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    
+
 </head>
 
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Votelist</a>
-        <a class="btn btn-outline-light" href="/login" id="user-settings">Log In</a>
+    <a class="btn btn-outline-light" href="/login" id="user-settings">Log In</a>
     </div>
 </nav>
+
 <body>
     <div class="container" style="padding-top: 60px; max-width: 400.98px;">
         <div id="wrapper">
@@ -28,27 +29,37 @@
                 <br>
 
                 <div class="card-body">
-                    
+
                     <form action="/register" method="post">
                         <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                              </svg></span></div>
-                            <input class="form-control" name="username" type="text" placeholder="Username" required maxlength="30">
+                            <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><svg
+                                        width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg></span></div>
+                            <input class="form-control" name="username" type="text" placeholder="Username" required
+                                maxlength="30">
                         </div><br>
                         <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
-                                <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
-                              </svg></span></div>
-                            <input class="form-control" name="password" type="password" placeholder="Password" required maxlength="30">
+                            <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><svg
+                                        width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                                        <path fill-rule="evenodd"
+                                            d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                                    </svg></span></div>
+                            <input class="form-control" name="password" type="password" placeholder="Password" required
+                                maxlength="30">
                         </div><br>
                         <button class="btn btn-primary" type="submit" style="width:100%;">Sign Up</button>
-                        <span id="lower" style="position: relative; top: 8px; left: 0px;">Allready a account? <a href="/login">Log In</a></span>
+                        <span id="lower" style="position: relative; top: 8px; left: 0px;">Allready a account? <a
+                                href="/login">Log In</a></span>
                     </form>
                 </div>
             </div><br>
-            
+
         </div>
     </div>
 </body>

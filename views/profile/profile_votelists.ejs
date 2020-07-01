@@ -22,34 +22,28 @@
             <li class="nav-item">
                 <a class="nav-link" href="/settings">Settings</a>
             </li>
-
         </ul>
         <br>
 
         <div class="main">
-            <%- include('../partials/sort') %>
-
-            <% if (posts != undefined) { %>
-            <article class="post" data-ref="<%= posts[0].subreddit %>">
-                
-
-                <div class="info">
-                    <header>
-                        <a><%= posts[0].subreddit %></a>
-                        <small><span class="post-user"><a>by <%= posts[0].username %></a></span></small>
-                    </header>
+            <% if (posts != undefined) { 
+                posts.forEach((post) => { %>
+            <article class="post" data-ref="<%= post._id %>">
+                <header>
+                    <a href="/r/<%= post.name %>"><%= post.name %></a>
+                </header>
+                <div>
+                    <%= post.description %>
                 </div>
             </article>
-
-            
+            <% });%>
             <% if(posts.length == 0) { %>
-            There are no posts.
+            There are no Votelists.
             <% } %>
 
             <% } else { %>
-            There are no posts.
+            There are no Votelists.
             <% } %>
-
         </div>
     </div>
 

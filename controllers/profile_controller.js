@@ -4,10 +4,16 @@ mongoose.Promise = global.Promise;
 let Votelists = require("../models/subreddit");
 let Post = require("../models/post");
 let Profile = require("../models/profile");
-let Account = require("../models/account")
+let Account = require("../models/account");
+let Subreddit = require("../models/subreddit");
+const {
+    vote
+} = require("./post_controller");
 
-exports.votelists = function (req, res){
+exports.votelists = function (req, res) {
     let posts = undefined;
+    let subreddit = undefined;
+    let votelists = undefined;
     let created = undefined;
 
     let sort = undefined;
@@ -58,24 +64,24 @@ exports.votelists = function (req, res){
             if (err) throw err;
 
         }).then(function () {
-            Post.find({
-                username: req.params.user
-            })
-            .sort(sort).exec(function (err, result) {
-                if (err) throw err;
-
-                if (result.length) {
-                    posts = result
-                }
-                console.log(`[Profile] fetching votelists from ${req.params.user} !`)
-                res.render("./profile/profile_votelists", {
-                    profile_user: req.params.user,
-                    posts: posts,
-                    created: created,
-                    isAuth: req.isAuthenticated()
+            Subreddit.find({
+                    username: req.params.user
                 })
-            })
-    })
+                .sort(sort).exec(function (err, result) {
+                    if (err) throw err;
+
+                    if (result.length) {
+                        votelists = result
+                    }
+                    console.log(`[Profile] fetching posts from ${req.params.user} ${result.length} !`)
+                    res.render("./profile/profile_votelists", {
+                        profile_user: req.params.user,
+                        posts: votelists,
+
+                        isAuth: req.isAuthenticated()
+                    })
+                })
+        })
     })
 }
 exports.posts = function (req, res) {

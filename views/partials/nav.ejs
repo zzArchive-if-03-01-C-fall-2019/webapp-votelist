@@ -1,28 +1,29 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">
-        
-        Votelist
-    </a>
-    <div id="user-info">
-        <% if(user) { %>
-          <a class="btn btn-outline-light" href="/submit/subreddit" id="user-settings">Create a votelist</a>
-<!-- Example single danger button -->
-<div class="btn-group">
-        
-        <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="user"><%= user %></span></button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="/u/<%=user%>/votelists">Votelist</a>
-          <a class="dropdown-item" href="/u/<%=user%>">Vote elements</a>
-          <a class="dropdown-item" href="/u/<%=user%>/saved/posts">Saved vote elements</a>
-          <a class="dropdown-item" href="/settings">Settings</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/logout">Logout</a>
-        </div>
+  <a class="navbar-brand" href="/">
+
+    Votelist
+  </a>
+  <div id="user-info">
+    <% if(user) { %>
+    <a class="btn btn-outline-light" href="/submit/subreddit" id="user-settings">Create a votelist</a>
+    <!-- Example single danger button -->
+    <div class="btn-group">
+
+      <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false"><span id="user"><%= user %></span></button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="/u/<%=user%>/votelists">Votelist</a>
+        <a class="dropdown-item" href="/u/<%=user%>">Vote elements</a>
+        <a class="dropdown-item" href="/u/<%=user%>/saved/posts">Saved vote elements</a>
+        <a class="dropdown-item" href="/settings">Settings</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/logout">Logout</a>
       </div>
-        <% } else { %>
-        <a class="btn btn-outline-light" href="/submit/subreddit" id="user-settings">Create a votelist</a>
-        <a class="btn btn-outline-light" href="/login" id="user-settings">Log In</a>
-        <% } %>
     </div>
+    <% } else { %>
+    <a class="btn btn-outline-light" href="/submit/subreddit" id="user-settings">Create a votelist</a>
+    <a class="btn btn-outline-light" href="/login" id="user-settings">Log In</a>
+    <% } %>
+  </div>
 
 </nav>
