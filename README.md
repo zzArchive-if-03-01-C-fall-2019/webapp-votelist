@@ -50,31 +50,3 @@ Those who have the link can then vote
 ## Basic structure of the backend
 Current mind map: https://mm.tt/1493045081?t=Y2Nvz26KGz
 
-
-
-## Installation
-
-1)
-```
-npm init -y
-```
-
-2)
-```
-npm install
-```
-
-3)
-
-for dev
-```
-nodemon app.js
-```
-
-for server
-```
-node app.js
-```
-
-
-
