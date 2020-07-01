@@ -14,7 +14,7 @@
             <h1 class="mb-4"><%= info.name %></h1>
             <p><%=  info.description %></p>
             <br>
-            <%- include('../partials/sidebar_subreddit_actions', {name: info.name}) %>
+            <%- include('../partials/bar_add_sort_search', {name: info.name}) %>
 
             <% if (posts != undefined) { 
                 posts.forEach((post) => { %>

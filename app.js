@@ -7,15 +7,15 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-// making the connection to mongo database
 
 
-//mongoose.connect(db.config.uri, {
-   mongoose.connect('mongodb://localhost:27017/votelist', {
+
+mongoose.connect(db.config.uri, {
+  // mongoose.connect('mongodb://localhost:27017/votelist', {
         useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
-// middlewares for express routes
+
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -36,12 +36,12 @@ app.use(function (req, res, next) {
     next();
 });
 
-// express routes that exist
+
 app.use('/', require('./routes/auth'));
 app.use('/', require('./routes/front'));
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/settings'));
-app.use('/r/', require('./routes/subreddit'));
+app.use('/v/', require('./routes/votelist'));
 app.use('/u/', require('./routes/profile'));
 app.use('/api', require('./routes/api'));
 
@@ -51,7 +51,7 @@ app.get('*', function (req, res) {
     res.render("./error")
 });
 
-// functions for persistant sessions
+
 passport.serializeUser(function (user_id, done) {
     done(null, user_id);
 });

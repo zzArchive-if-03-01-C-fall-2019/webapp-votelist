@@ -1,6 +1,6 @@
-let Post = require("../models/post");
+let Post = require("../models/vote_element");
 let Profile = require("../models/profile");
-let PostState = require("../models/postState")
+let PostState = require("../models/vote_elementState")
 
 exports.check = function (req, res) {
     PostState.find({
@@ -116,15 +116,8 @@ exports.vote = function (req, res) {
         Profile.update({
             username: req.body.user
         }, {
-            //$inc: {
-            //    karma_post: 1
-            //}
         }, function (err, result) {
             if (err) throw err;
-
-            //if (result) {
-            //    console.log(`[${req.session.user}] post karma increased!`)
-            //}
         });
     } else if (req.body.action == "decrement") {
         console.log("decrement")
@@ -132,15 +125,8 @@ exports.vote = function (req, res) {
         Profile.update({
             username: req.body.user
         }, {
-            //$inc: {
-            //    karma_post: -1
-            //}
         }, function (err, result) {
             if (err) throw err;
-
-            //if (result) {
-            //    console.log(`[${req.session.user}] post karma decreased!`)
-            //}
         });
     }
 

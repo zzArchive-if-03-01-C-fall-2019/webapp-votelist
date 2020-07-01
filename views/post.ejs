@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <%- include('partials/head', {title: post.title}) %>
@@ -28,7 +29,7 @@
                     <div class="info">
                         <header>
                             <% if(post.type == "post") { %>
-                            <a href="/r/<%= post.subreddit %>/<%= post._id %>"><%= post.title %></a>
+                            <a href="/v/<%= post.subreddit %>/<%= post._id %>"><%= post.title %></a>
                             <%  } else { %>
                             <a href="<%= post.link %>"><%= post.title %></a>
                             <% } %>
@@ -37,7 +38,7 @@
                         <div>
                             submitted <time title="<%= post.time %>">-</time>
                             by <span class="post-user"><a href="/u/<%= post.username %>"><%= post.username %></a></span>
-                            from <span><a href="/r/<%= post.subreddit %>">/r/<%= post.subreddit %></a></span>
+                            from <span><a href="/v/<%= post.subreddit %>">/v/<%= post.subreddit %></a></span>
                         </div>
 
                         <p class="border border-primary post-body"><% if(post.type == "post") { %><%= post.body %><%  } else { %><%= post.link %><% } %></p>
@@ -59,7 +60,7 @@
                 <% if(!isAuth) { %>
                     You must be <a href="/login">logged in</a> to leave a comment
                 <% } else { %>
-                <form action="/r/<%=info.name%>/<%= post._id %>/comments" method="post">
+                <form action="/v/<%=info.name%>/<%= post._id %>/comments" method="post">
                     <textarea class="form-control comment-text" name="comment" rows="2" placeholder="Comment here ..." required
                         maxlength="1000"></textarea><br>
                     <button class="btn btn-primary auth-req" type="submit">Submit</button>

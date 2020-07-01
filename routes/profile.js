@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-// CONTROLLERS
 let profile_controller = require("../controllers/profile_controller")
 
-// ROUTES
+// Routes
 router.get('/:user/votelists', profile_controller.votelists);
 router.get('/:user/posts', profile_controller.posts);
 router.get('/:user/saved/posts', profile_controller.saved_posts);
