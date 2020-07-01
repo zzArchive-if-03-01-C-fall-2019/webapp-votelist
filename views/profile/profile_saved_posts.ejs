@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<%- include('../partials/head', {title: "/u/" + profile_user + " - saved posts" }) %>
+<%- include('../partials/head', {title: profile_user + " - saved vote elements" }) %>
 
 <body>
     <%- include('../partials/nav', {user: locals.user}) %>
@@ -68,10 +68,10 @@
             </article>
             <% });%>
             <% if(posts.length == 0) { %>
-            There are no saved posts.
+            There are no saved vote elements.
             <% } %>
             <% } else { %>
-            There are no saved posts.
+            There are no saved vote elements.
             <% } %>
 
         </div>

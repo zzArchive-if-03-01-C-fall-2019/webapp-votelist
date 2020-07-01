@@ -1,7 +1,7 @@
 {
   "name": "votelist",
   "version": "1.0.0",
-  "description": "A Vote App",
+  "description": "A vote App",
   "engines": {
     "node": "8.11.4"
   },

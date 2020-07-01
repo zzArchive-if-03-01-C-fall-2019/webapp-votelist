@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<%- include('../partials/head', {title: "Frontpage - new link"}) %>
+<%- include('../partials/head', {title: "Create a Votelist"}) %>
 
 <body>
     <%- include('../partials/nav', {user: locals.user}) %>
@@ -26,7 +26,7 @@
                     <input type="text" class="form-control" name="subreddit" id="subreddit_form"
                         placeholder="Enter subbeddit" required><br>
                     <div class="invalid-feedback">That Votelist doesn't exist!</div><br>
-                    <button type="submit" class="btn btn-primary auth-req">Submit</button>
+                    <button type="submit" class="btn btn-primary auth-req">Create</button>
                 </form>
                 <% } %>
             </div>

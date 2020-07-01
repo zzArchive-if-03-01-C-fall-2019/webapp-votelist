@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<%- include('../partials/head', {title: "Frontpage - new subbedit"}) %>
+<%- include('../partials/head', {title: "Create a Votelist"}) %>
 
 <body>
 
@@ -8,7 +8,7 @@
 
     <%- include('../partials/nav', {user: locals.user}) %>
     <div class="container" style="padding-top: 60px; max-width: 575.98px;">
-        <h1 class="mb-4">New Votepoll</h1>
+        <h1 class="mb-4">Create a new Votelist</h1>
 
 
 
@@ -16,15 +16,15 @@
 
             <div>
                 <% if(!locals.user) { %>
-                You must be logged in to submit a votelist.
+                You must be logged in to submit a Votelist.
                 <% } else { %>
                 <form id="form-subreddit" action="/submit/subreddit" method="post">
                     <input type="text" class="form-control" name="subreddit" id="subreddit_form"
-                        placeholder="Enter subbeddit" required>
-                    <div class="invalid-feedback">That subbeddit already exists!</div><br>
+                        placeholder="Enter Votelist name" required>
+                    <div class="invalid-feedback">That Votelist already exists!</div><br>
                     <textarea class="form-control" rows="5" name="description" placeholder="Enter description"
                         required></textarea><br>
-                    <button type="submit" class="btn btn-primary auth-req">Submit</button>
+                    <button type="submit" class="btn btn-primary auth-req">Create</button>
                 </form>
                 <% } %>
             </div>
