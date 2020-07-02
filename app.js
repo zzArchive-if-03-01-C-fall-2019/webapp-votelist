@@ -7,14 +7,10 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-
-
-
 mongoose.connect(db.config.uri, {
   // mongoose.connect('mongodb://localhost:27017/votelist', {
         useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
-
 
 app.use(express.static("public"));
 app.use(bodyParser.json());

@@ -5,7 +5,6 @@ let Profile = require("../models/profile");
 exports.get_all = function (req, res) {
     let subreddit = undefined;
     let posts = undefined;
-
     let sort = undefined;
 
     switch (req.query.sort) {

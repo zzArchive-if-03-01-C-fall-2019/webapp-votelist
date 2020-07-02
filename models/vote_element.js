@@ -14,11 +14,7 @@ const voteelementSchema = new mongoose.Schema({
     votes: {
         type: Number,
         default: 0
-    },
-    //num_of_comments: {
-    //    type: Number,
-    //    default: 0
-    //}
+    }
 });
 
 module.exports = mongoose.model('Post', voteelementSchema);
